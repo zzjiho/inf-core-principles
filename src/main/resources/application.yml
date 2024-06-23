@@ -1,0 +1,23 @@
+management:
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 이 애플리케이션에 대한 정보를 남기고 싶을때
+info:
+  app:
+    name: hello-actuator
+    company: test
