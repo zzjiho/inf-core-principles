@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.0.2'
     id 'io.spring.dependency-management' version '1.1.0'
+    id "com.gorylenko.gradle-git-properties" version "2.4.1" //git 정보를 가져오기 위한 플러그인
 }
 
 group = 'hello'
@@ -22,6 +23,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator' //actuator 추가
+    implementation 'io.micrometer:micrometer-registry-prometheus' // 스프링 부트와 actuator가 자동으로 마이크로미터 프로메테우스 구현체 등록해서 동작하도록 설정
 
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'

@@ -6,6 +6,8 @@ management:
       enabled: true
     env:
       enabled: true
+  server: # actuator 서버를 띄울 포트를 설정
+    port: 8080
   endpoint:
     shutdown:
       enabled: true
@@ -16,7 +18,18 @@ management:
       exposure:
         include: "*"
 
+# 이 애플리케이션에 대한 정보를 남기고 싶을때
 info:
   app:
     name: hello-actuator
     company: test
+
+# hello.controller 패키지와 그 하위는 debug 레벨 출력
+logging:
+  level:
+    hello.controller: debug
+
+server:
+  tomcat:
+    mbeanregistry:
+      enabled: true
